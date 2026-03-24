@@ -55,6 +55,7 @@
             <ListView.ContextMenu>
                 <ContextMenu DataContext="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource Self}}">
                     <MenuItem Header="Редактировать агента" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать агента" Click="MenuItem_Click_1"></MenuItem>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.ItemTemplate>

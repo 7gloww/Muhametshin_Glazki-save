@@ -246,5 +246,9 @@ namespace Muhametshin_Глазки_save
             }
         }
 
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

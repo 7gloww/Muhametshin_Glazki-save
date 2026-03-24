@@ -218,6 +218,11 @@ namespace Muhametshin_Глазки_save
             }
         }
 
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void DeletePrevLogo(string absolutePath)
         {
             string shortRelativePath = $"/agents/{Path.GetFileName(absolutePath)}";
@@ -254,5 +259,6 @@ namespace Muhametshin_Глазки_save
 
             UpdateAgents();
         }
+
     }
 }

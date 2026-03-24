@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Muhametshin_Глазки_save"
         mc:Ignorable="d"
-        Title="AddEditPageWindow" Height="450" Width="850">
+        Title="AddEditPageWindow" Height="500" Width="1000">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"></Setter>
@@ -63,7 +63,7 @@
                                     Margin="0 0 10 4" Grid.Column="0">
                                 <Image Name="ImgLogo" MaxWidth="150" MaxHeight="200">
                                     <Image.Source>
-                                        <Binding Path="LogoPath">
+                                        <Binding Path="AgentPhotoPath">
                                             <Binding.TargetNullValue>
                                                 <ImageSource>/Resources/picture.png</ImageSource>
                                             </Binding.TargetNullValue>
@@ -134,6 +134,7 @@
                             Click="BtnSave_Click"></Button>
                     <Border Width="192"></Border>
                 </StackPanel>
+                <Button Grid.Column="1" Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
             </Grid>
         </StackPanel>
     </Grid>
