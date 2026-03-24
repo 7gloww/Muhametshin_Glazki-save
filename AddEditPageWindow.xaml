@@ -1,0 +1,140 @@
+﻿<Window x:Class="Muhametshin_Глазки_save.AddEditPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Muhametshin_Глазки_save"
+        mc:Ignorable="d"
+        Title="AddEditPageWindow" Height="450" Width="850">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Name="PanelFirst" Margin="0 0 10 0" Grid.Column="0">
+                    <StackPanel Name="PanelAgentName" Margin="0 0 0 10">
+                        <TextBlock Text="Наименование:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentTitle" Text="{Binding Title}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentType" Margin="0 0 0 10">
+                        <TextBlock Text="Тип:" Margin="0 0 0 4"></TextBlock>
+                        <ComboBox Name="CBoxAgentType" SelectedItem="{Binding AgentType}" DisplayMemberPath="Title"></ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentPriority" Margin="0 0 0 10">
+                        <TextBlock Text="Приоритет:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentPriority" Text="{Binding Priority}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentDirectorName" Margin="0 0 0 10">
+                        <TextBlock Text="Директор:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentDirectorName" Text="{Binding DirectorName}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentLogo" Margin="0 0 0 10" HorizontalAlignment="Left">
+                        <TextBlock Text="Логотип:" Margin="0 0 0 4"></TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Border BorderBrush="LightGray" BorderThickness="1" Padding="8"
+                                    Margin="0 0 10 4" Grid.Column="0">
+                                <Image Name="ImgLogo" MaxWidth="150" MaxHeight="200">
+                                    <Image.Source>
+                                        <Binding Path="LogoPath">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>/Resources/picture.png</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </Border>
+
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" Margin="0 0 0 6" VerticalAlignment="Top"
+                                            HorizontalAlignment="Left">
+                                    <Button Name="BtnLogoEdit" Content="Изменить" FontWeight="Regular" Margin="0 0 10 0"
+                                            Background="{x:Null}" Foreground="Black" BorderBrush="Black"
+                                            Click="BtnLogoEdit_Click"></Button>
+                                    <Button Name="BtnLogoDelete" Content="Удалить" FontWeight="Regular"
+                                            Background="{x:Null}" Foreground="Red" BorderBrush="Red"
+                                            Click="BtnLogoDelete_Click"></Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <TextBlock Name="TBlockLogoPath" Text="{Binding Logo}" FontSize="16"
+                                       TextWrapping="Wrap" d:Text="path/path/path/path"
+                                       VerticalAlignment="Center" Opacity="0.4" Grid.Row="1" Grid.ColumnSpan="2"></TextBlock>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Name="PanelSecond" Margin="10 0 0 0" Grid.Column="1">
+                    <StackPanel Name="PanelAgentAddress" Margin="0 0 0 10">
+                        <TextBlock Text="Адрес:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentAddress" Text="{Binding Address}" TextWrapping="WrapWithOverflow"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentINN" Margin="0 0 0 10">
+                        <TextBlock Text="ИНН:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentINN" Text="{Binding INN}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentKPP" Margin="0 0 0 10">
+                        <TextBlock Text="КПП:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentKPP" Text="{Binding KPP}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentPhone" Margin="0 0 0 10">
+                        <TextBlock Text="Телефон:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentPhone" Text="{Binding Phone}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Name="PanelAgentEmail" Margin="0 0 0 10">
+                        <TextBlock Text="Email:" Margin="0 0 0 4"></TextBlock>
+                        <TextBox Name="TBoxAgentEmail" Text="{Binding Email}"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <StackPanel Name="PanelBottom" Grid.Row="1">
+            <Separator BorderBrush="LightGray" BorderThickness="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"></Separator>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="BtnAgentDelete" Content="Удалить агента" FontWeight="Normal" Background="{x:Null}" Foreground="Red" 
+                        BorderBrush="Red" HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Click="BtnAgentDelete_Click"></Button>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center">
+                    <Button Name="BtnSave" Content="Сохранить"
+                            Click="BtnSave_Click"></Button>
+                    <Border Width="192"></Border>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
