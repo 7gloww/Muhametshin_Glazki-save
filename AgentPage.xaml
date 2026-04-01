@@ -14,6 +14,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
+        <StackPanel Name="PanelTop">
         <Grid Grid.Row="0" Background="#FFE9F9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -51,11 +52,27 @@
                 </ComboBox>
             </StackPanel>
         </Grid>
-        <ListView Name="AgentListView" Grid.Row="1">
+            <StackPanel Name="PanelEditPriority" Visibility="Collapsed">
+                <Separator Background="LightGray"></Separator>
+                <Grid Margin="16 8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Name="BtnEditAgentPriority" Content="Изменить приоритет на ..."
+                            Grid.Column="1" Click="BtnEditAgentPriority_Click"></Button>
+
+                    <TextBlock Name="TBlockNumSelected"
+                               VerticalAlignment="Center" Grid.Column="0" Opacity="0.4"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        <ListView Name="AgentListView" SelectionChanged="AgentListView_SelectionChanged" Grid.Row="1">
             <ListView.ContextMenu>
                 <ContextMenu DataContext="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource Self}}">
                     <MenuItem Header="Редактировать агента" Click="MenuItem_Click"></MenuItem>
-                    <MenuItem Header="Редактировать агента" Click="MenuItem_Click_1"></MenuItem>
+                    <MenuItem Header="Добавить агента" Click="BtnAddAgent_Click"></MenuItem>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.ItemTemplate>

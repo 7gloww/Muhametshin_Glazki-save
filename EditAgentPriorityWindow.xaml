@@ -1,0 +1,30 @@
+﻿<Window x:Class="Muhametshin_Глазки_save.EditAgentPriorityWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Muhametshin_Глазки_save"
+        mc:Ignorable="d"
+        Title="EditAgentPriorityWindow" Height="150" Width="400" FontFamily="Century Gothic">
+    
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Приоритет:" Margin="10 5 0 4"></TextBlock>
+            <TextBox Name="TBoxAgentPriority" Width="300" HorizontalAlignment="Left" Margin="15 10 0 0"></TextBox>
+        </StackPanel>
+
+        <Button Name="BtnSave" Content="Изменить" Grid.Row="1" Click="BtnSave_Click"
+                VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+    </Grid>
+</Window>

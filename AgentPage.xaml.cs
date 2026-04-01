@@ -41,7 +41,7 @@ namespace Muhametshin_Глазки_save
         {
             var currentAgent = MuhametshinEyesEntities.GetContext().Agent.ToList();
 
-            int totalNumAgents = currentAgent.Count;
+            //int totalNumAgents = currentAgent.Count;
 
             if (ComboSort.SelectedIndex == 1)
             {
@@ -105,9 +105,9 @@ namespace Muhametshin_Глазки_save
             .ToList();
 
 
-            int currentNumAgents = currentAgent.Count;
+            //int currentNumAgents = currentAgent.Count;
 
-            TBlockNumRecords.Text = $"{currentNumAgents} из {totalNumAgents}";
+            //TBlockNumRecords.Text = $"{currentNumAgents} из {totalNumAgents}";
 
 
             _filteredAgents = currentAgent;
@@ -260,5 +260,40 @@ namespace Muhametshin_Глазки_save
             UpdateAgents();
         }
 
+        private void AgentListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AgentListView.SelectedItems.Count is int count && count > 1)
+            {
+                PanelEditPriority.Visibility = Visibility.Visible;
+                TBlockNumSelected.Text = $"Выделено агентов: {count}";
+            }
+            else
+            {
+                PanelEditPriority.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void BtnEditAgentPriority_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedAgents = AgentListView.SelectedItems.Cast<Agent>().ToList();
+            int maxPriority = selectedAgents.Max(a => a.Priority);
+            var editAgentPriorityWindow = new EditAgentPriorityWindow(maxPriority);
+            try
+            {
+                if (editAgentPriorityWindow.ShowDialog() == true)
+                {
+                    int newPriority = editAgentPriorityWindow.Priority;
+                    foreach (Agent agent in selectedAgents)
+                    {
+                        agent.Priority = newPriority;
+                    }
+                    MuhametshinEyesEntities.GetContext().SaveChanges();
+                    UpdateAgents();
+                }
+            }
+            catch (Exception ex)
+            {
+                _messageService.ShowError($"Ошибка изменения приоритета.\n\n{ex.Message}");
+            }
+        }
     }
 }

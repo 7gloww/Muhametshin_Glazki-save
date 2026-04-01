@@ -73,8 +73,14 @@
     <Compile Include="AgentPriorityHistory.cs">
       <DependentUpon>MuhametshinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AgentSalesHistoryWindow.xaml.cs">
+      <DependentUpon>AgentSalesHistoryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AgentType.cs">
       <DependentUpon>MuhametshinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EditAgentPriorityWindow.xaml.cs">
+      <DependentUpon>EditAgentPriorityWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Material.cs">
       <DependentUpon>MuhametshinModel.tt</DependentUpon>
@@ -121,6 +127,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AgentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgentSalesHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditAgentPriorityWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -338,8 +352,6 @@
       <LastGenOutput>MuhametshinModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datebase\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

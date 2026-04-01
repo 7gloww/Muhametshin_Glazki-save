@@ -246,6 +246,12 @@ namespace Muhametshin_Глазки_save
             }
         }
 
+        private void BtnAgentProductSalesHistory_Click(object sender, RoutedEventArgs e)
+        {
+            var agentSalesHistoryWindow = new AgentSalesHistoryWindow(_currentAgent);
+            agentSalesHistoryWindow.ShowDialog();
+        }
+
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Close();

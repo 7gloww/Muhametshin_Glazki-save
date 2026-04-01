@@ -132,6 +132,9 @@
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center">
                     <Button Name="BtnSave" Content="Сохранить"
                             Click="BtnSave_Click"></Button>
+                    <Button Name="BtnAgentProductSalesHistory" Content="История продаж" FontWeight="Normal" Background="{x:Null}" Foreground="Black"
+                            HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Click="BtnAgentProductSalesHistory_Click"></Button>
                     <Border Width="192"></Border>
                 </StackPanel>
                 <Button Grid.Column="1" Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
