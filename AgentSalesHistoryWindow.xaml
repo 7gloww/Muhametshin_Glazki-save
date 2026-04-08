@@ -41,20 +41,23 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
+                    <TextBlock Text="Кол-во:" Margin="0 0 0 4"></TextBlock>
+                    <TextBox Name="TBoxProductCount" Margin="0 0 10 0" Text="1"
+             VerticalAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
                     <TextBlock Text="Дата:" Margin="0 0 0 4"></TextBlock>
                     <DatePicker Name="DPickerSaleDate" Margin="0 0 10 0"></DatePicker>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="Кол-во:" Margin="0 0 0 4"></TextBlock>
-                    <TextBox Name="TBoxProductCount" Margin="0 0 10 0" Text="1"
-                             VerticalAlignment="Center"></TextBox>
-                </StackPanel>
-
-                <Button Name="BtnAddSale" Content="Добавить" Grid.Column="2"
-                        Click="BtnAddSale_Click" VerticalAlignment="Bottom"></Button>
             </Grid>
         </Grid>
+        
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Left" Margin="10">
+            <Button Name="BtnAddSale" Content="Добавить" Grid.Row="2" Click="BtnAddSale_Click" VerticalAlignment="Bottom"></Button>
+        </StackPanel>
 
         <ListView Name="ListViewSales" Grid.Row="1"
                   SelectionChanged="ListViewSales_SelectionChanged">
@@ -80,9 +83,9 @@
             </ListView.View>
         </ListView>
 
-        <StackPanel Name="PanelBottom" Grid.Row="2" Margin="10" Visibility="Collapsed">
-            <Button Name="BtnDelete" Content="Удалить запись" FontWeight="Normal" Background="{x:Null}"
-                        Foreground="Red"  BorderBrush="Red" HorizontalAlignment="Left"
+        <StackPanel Name="PanelBottom" Grid.Row="2" HorizontalAlignment="Right" Margin="10" Visibility="Collapsed">
+            <Button Name="BtnDelete" Content="Удалить запись" FontWeight="Normal" Background="{x:Null}" Foreground="Red" 
+                        BorderBrush="Red" HorizontalAlignment="Left"
                         VerticalAlignment="Center" Click="BtnDelete_Click"></Button>
         </StackPanel>
     </Grid>

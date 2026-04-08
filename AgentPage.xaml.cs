@@ -288,6 +288,7 @@ namespace Muhametshin_Глазки_save
                     }
                     MuhametshinEyesEntities.GetContext().SaveChanges();
                     UpdateAgents();
+                    AgentListView.SelectedItems.Clear();
                 }
             }
             catch (Exception ex)
