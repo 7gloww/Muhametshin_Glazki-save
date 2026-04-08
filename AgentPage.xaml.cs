@@ -231,6 +231,7 @@ namespace Muhametshin_Глазки_save
             {
                 if (!MuhametshinEyesEntities.GetContext().Agent.Any(a => a.Logo == shortRelativePath))
                 {
+
                     File.Delete(absolutePath);
                     _messageService.ShowInfo($"Предыдущий логотип \"{Path.GetFileName(absolutePath)}\" успешно удалён.");
                 }

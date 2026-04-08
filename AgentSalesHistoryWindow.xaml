@@ -30,7 +30,7 @@
                 <TextBlock Text="Товар:" Margin="0 0 0 4"></TextBlock>
                 <ComboBox Name="CBoxProducts" Margin="0 0 10 0" DisplayMemberPath="Title" 
                           IsEditable="True" VerticalAlignment="Center"
-                          TextSearch.TextPath="Title"></ComboBox>
+                          TextSearch.TextPath="Title" Height="25" FontSize="15"></ComboBox>
             </StackPanel>
 
             <Grid Grid.Column="1">
@@ -41,14 +41,13 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="Кол-во:" Margin="0 0 0 4"></TextBlock>
-                    <TextBox Name="TBoxProductCount" Margin="0 0 10 0" Text="1"
-             VerticalAlignment="Center"></TextBox>
+                    <TextBlock Text="Количество:" Margin="0 0 0 4"></TextBlock>
+                    <TextBox Name="TBoxProductCount" Margin="0 0 10 0" Text="1" FontSize="15" Height="25"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="Дата:" Margin="0 0 0 4"></TextBlock>
-                    <DatePicker Name="DPickerSaleDate" Margin="0 0 10 0"></DatePicker>
+                    <DatePicker Name="DPickerSaleDate" Margin="0 0 10 0" FontSize="15"></DatePicker>
                 </StackPanel>
 
             </Grid>
